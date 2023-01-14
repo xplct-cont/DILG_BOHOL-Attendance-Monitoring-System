@@ -101,7 +101,7 @@ class ClockController extends Controller
         {
             $has = table::attendance()->where([['idno', $idno],['date', $date]])->exists();
 
-            if ($has == 0) 
+            if ($has == 1) 
             {
                 $hti = table::attendance()->where([['idno', $idno],['date', $date]])->value('timein');
                 $hti = date('h:i A', strtotime($hti));
@@ -192,7 +192,7 @@ class ClockController extends Controller
                 ]);
             } 
 
-            if ($hasout == 0) 
+            if ($hasout != null ) 
             {
                 $hto = table::attendance()->where([['idno', $idno],['date', $date]])->value('timeout');
                 $hto = date('h:i A', strtotime($hto));
