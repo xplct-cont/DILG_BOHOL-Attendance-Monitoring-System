@@ -1,11 +1,5 @@
 <!doctype html>
-<!--
-* Workday - A time clock application for employees
-* Email: official.codefactor@gmail.com
-* Version: 1.1
-* Author: Brian Luna
-* Copyright 2020 Codefactor
--->
+
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">

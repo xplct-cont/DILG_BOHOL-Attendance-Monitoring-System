@@ -1,11 +1,4 @@
 <!doctype html>
-<!--
-* Workday - A time clock application for employees
-* Email: official.codefactor@gmail.com
-* Version: 1.1
-* Author: Brian Luna
-* Copyright 2020 Codefactor
--->
 <html lang="en" class="fullscreen-bg">
 
 <head>
@@ -93,6 +86,7 @@
 <div class="dropup">
 	<button class="dropbtn">Developers</button>
 	<div class="dropup-content">
+
 	  <a href="#">Vienna Rose Pepito</a>
 	  <a href="#">Kenn Secusana</a>
 	  <a href="#">Chadie Gil Augis</a>
@@ -156,14 +150,14 @@
 .dropup-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 155px;
   bottom: 50px;
   z-index: 1;
+  background-color: #3498DB;
 }
 
 .dropup-content a {
-  color: black;
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
