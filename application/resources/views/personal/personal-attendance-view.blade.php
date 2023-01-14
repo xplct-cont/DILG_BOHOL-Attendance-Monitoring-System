@@ -51,7 +51,7 @@
                             @isset($a)
                             @foreach ($a as $v)
                                 <tr>
-                                    <td>{{ $v->date }}</td>
+                                    <td>{{ $v->date}}</td>
                                     <td>
                                         @php
                                             if($v->timein != null) {
