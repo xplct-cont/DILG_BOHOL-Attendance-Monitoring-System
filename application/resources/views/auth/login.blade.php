@@ -25,7 +25,7 @@
 		<div class="vertical-align-wrap">
 			<div class="vertical-align-middle">
 				<img src="{{ asset('/assets/images/img/bohol-dilg.png') }}" style="width: 300px; display:block; margin-left: auto; margin-right:auto; margin-bottom: 20px;" alt="DILG">
-				<p style="text-align:center; font-weight: 700; font-size: 20px;">Department of the Interior and Local Government <br>
+				<p style="text-align:center; font-weight: 700; font-size: 22px;">Department of the Interior and Local Government <br>
 				Bohol Province</p>
 				<div class="auth-box">
 				
@@ -86,6 +86,10 @@
 
 </body>
 
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
 <div class="dropup">
 	<button class="dropbtn">Developers</button>
 	<div class="dropup-content">
@@ -100,10 +104,40 @@
 </html>
 
 <style scoped>
+
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(192, 191, 191) 50%, white 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+.bg3 {
+  animation-duration:5s;
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
  .dropbtn {
   background-color: #3498DB;
   color: white;
-  padding: 9px;
+  padding: 7px;
   font-size: 10px;
   border: none;
 }
@@ -114,7 +148,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 29px;
+  height: 26px;
   color: white;
   text-align: left;
 }
