@@ -70,8 +70,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="ui blue button large fluid"
-                                style="margin-bottom: 20px;">{{ __('SIGN IN') }}</button>
+                            <button type="submit" class="ui button large fluid"
+                                style="margin-bottom: 20px; background-color:#234495; color:white;">{{ __('SIGN IN') }}</button>
                         </form>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
 
 
     .dropbtn {
-        background-color: #3498DB;
+        background-color: #234495;
         color: white;
         padding: 8px;
         font-size: 10px;
@@ -166,7 +166,7 @@
         min-width: 155px;
         bottom: 50px;
         z-index: 1;
-        background-color: #3498DB;
+        background-color: #234495;
     }
 
     .dropup-content a {
@@ -185,6 +185,6 @@
     }
 
     .dropup:hover .dropbtn {
-        background-color: #2980B9;
+        background-color: #234495;
     }
 </style>

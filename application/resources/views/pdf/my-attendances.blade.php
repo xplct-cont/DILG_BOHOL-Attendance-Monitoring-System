@@ -69,7 +69,7 @@
                         @endif
                     @endisset
                 </td>
-                <td style="text-align: center;">{{ $user->status_timein }}/{{ $user->status_timeout }}</td>
+                <td style="text-align: center; background:color:#234495; color:white;">{{ $user->status_timein }}/{{ $user->status_timeout }}</td>
             </tr>
         @endforeach
 
