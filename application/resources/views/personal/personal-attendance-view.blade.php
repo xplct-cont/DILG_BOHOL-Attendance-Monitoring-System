@@ -17,7 +17,7 @@
                 <h2 class="page-title">{{ __("My Attendances") }}</h2>
             </div>    
         </div>
-      <div class="d-flex justify-content-end">  <a href="" class=" button p-2 rounded mb-2" style="background-color: #234495; color:white;">Download Attendance</a></div>
+      <div class="d-flex justify-content-end">  <a href="{{route('download_my_attendance')}}" class=" button p-2 rounded mb-2" style="background-color: #234495; color:white;">Download Attendance</a></div>
         <div class="row">
             <div class="col-md-12">
             <div class="box box-success">
@@ -85,6 +85,7 @@
                                                     $HM = explode('.', $v->totalhours); 
                                                     $h = $HM[0]; 
                                                     $m = $HM[1];
+                                                    
                                                 }
                                             @endphp
                                         @endif
@@ -92,7 +93,7 @@
                                             @if(stripos($v->totalhours, ".") === false) 
                                                 {{ $h }} hr
                                             @else 
-                                                {{ $h }} hr {{ $m }} mins
+                                                {{ $h }} hr {{ $m }} mins 
                                             @endif
                                         @endif
                                     @endisset
@@ -112,6 +113,7 @@
                             @endisset
                         </tbody>
                     </table>
+                   
                 </div>
             </div>
             </div>  

@@ -13,6 +13,7 @@ use App\Classes\permission;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use PDF;
 
 class PersonalAttendanceController extends Controller
 {
@@ -49,6 +50,19 @@ class PersonalAttendanceController extends Controller
 
 			return response()->json($data);
         }
+
 	}
+
+    public function download_my_attendance(){
+
+        set_time_limit(60);
+
+        $i = \Auth::user()->idno;
+        $download_my_attendances = table::attendance()->where('idno', $i)->orderBy('date', 'ASC')->get();
+        $pdf = PDF::loadVIew('pdf.my-attendances', [
+            'download_my_attendances' => $download_my_attendances
+        ]);
+        return $pdf->download('My Attendances.pdf');
+    }
 }
 

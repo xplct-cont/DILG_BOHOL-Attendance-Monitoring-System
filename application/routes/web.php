@@ -242,6 +242,7 @@ Route::group(['middleware' => 'auth'], function () {
 			// attendance 
 			Route::get('personal/attendance/view', 'Personal\PersonalAttendanceController@index');
 			Route::get('get/personal/attendance', 'Personal\PersonalAttendanceController@getPA');
+			Route::get('download_my_attendance', 'Personal\PersonalAttendanceController@download_my_attendance')->name('download_my_attendance');
 
 			// schedules 
 			Route::get('personal/schedules/view', 'Personal\PersonalSchedulesController@index');
