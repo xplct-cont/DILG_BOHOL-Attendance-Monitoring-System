@@ -33,7 +33,7 @@
         <div class="wrapper">
         
         <nav id="sidebar" class="active">
-            <div class="sidebar-header bg-danger">
+            <div class="sidebar-header" style="background-color: #234495;">
                 <div class="logo">
                 <a href="/" class="simple-text">
                     <img src="{{ asset('/assets/images/img/logo1.png') }}" style="height: 50px;"> <span style="color: whitesmoke; font-weight:700; font-size: 16px; margin-top:10px;">DILG-BOHOL</span>
@@ -98,7 +98,7 @@
         </nav>
 
         <div id="body" class="active">
-            <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #234495;">
                 <div class="container-fluid">
 
                     <button type="button" id="slidesidebar" class="ui icon button bg-light text-dark bg-white" >

@@ -17,6 +17,7 @@
                 <h2 class="page-title">{{ __("My Attendances") }}</h2>
             </div>    
         </div>
+      <div class="d-flex justify-content-end">  <a href="" class=" button p-2 rounded mb-2" style="background-color: #234495; color:white;">Download Attendance</a></div>
         <div class="row">
             <div class="col-md-12">
             <div class="box box-success">
