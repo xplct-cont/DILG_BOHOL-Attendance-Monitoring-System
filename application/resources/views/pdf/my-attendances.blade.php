@@ -20,6 +20,15 @@
     <p class="name">Name: {{ Auth::user()->name }}</p>
     <p class="id">ID Number: {{ Auth::user()->idno }}</p>
 
+    @php
+        $i = \Auth::user()->idno;
+        $count_my_attendances = DB::table('tbl_people_attendance')
+            ->where('idno', $i)
+            ->orderBy('date', 'ASC')
+            ->count();
+    @endphp
+
+    <p class="num">Number of My Attendances: {{ $count_my_attendances }}</p>
 
     <table id="users">
         <tr>
@@ -37,34 +46,33 @@
                 <td style="text-align: center;"> {{ Carbon\Carbon::parse($user->date)->format('F d,  Y') }}</td>
                 <td style="text-align: center;">{{ Carbon\Carbon::parse($user->timein)->format('h:i:s A') }}</td>
                 <td style="text-align: center;">{{ Carbon\Carbon::parse($user->timeout)->format('h:i:s A') }}</td>
-                
-                    <td style="text-align: center;">
-                        @isset($user->totalhours)
-                        @if($user->totalhours != null) 
+
+                <td style="text-align: center;">
+                    @isset($user->totalhours)
+                        @if ($user->totalhours != null)
                             @php
-                                if(stripos($user->totalhours, ".") === false) {
+                                if (stripos($user->totalhours, '.') === false) {
                                     $h = $user->totalhours;
                                 } else {
-                                    $HM = explode('.', $user->totalhours); 
-                                    $h = $HM[0]; 
+                                    $HM = explode('.', $user->totalhours);
+                                    $h = $HM[0];
                                     $m = $HM[1];
-                                    
                                 }
                             @endphp
                         @endif
-                        @if($user->totalhours != null)
-                            @if(stripos($user->totalhours, ".") === false) 
+                        @if ($user->totalhours != null)
+                            @if (stripos($user->totalhours, '.') === false)
                                 {{ $h }} hr
-                            @else 
+                            @else
                                 {{ $h }} hr {{ $m }} mins
-
                             @endif
                         @endif
-                    @endisset</td>
+                    @endisset
+                </td>
                 <td style="text-align: center;">{{ $user->status_timein }}/{{ $user->status_timeout }}</td>
             </tr>
-        @endforeach   
-       
+        @endforeach
+
     </table>
 </body>
 
@@ -116,6 +124,15 @@
     }
 
     .id {
+        text-align: start;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .num {
         text-align: start;
         font-size: 15px;
         font-weight: 400;
