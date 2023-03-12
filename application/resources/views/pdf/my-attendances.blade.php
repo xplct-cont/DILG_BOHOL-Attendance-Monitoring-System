@@ -17,9 +17,7 @@
     <hr>
     <p class="title">My Attendances</p>
     <br>
-    <p class="name">Name: {{ Auth::user()->name }}</p>
-    <p class="id">ID Number: {{ Auth::user()->idno }}</p>
-
+    <p class="name">Name: {{ Auth::user()->name }} ({{ Auth::user()->idno }})</p>
     @php
         $i = \Auth::user()->idno;
         $count_my_attendances = DB::table('tbl_people_attendance')
