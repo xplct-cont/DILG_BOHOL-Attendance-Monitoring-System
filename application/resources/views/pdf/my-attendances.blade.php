@@ -28,7 +28,14 @@
             ->count();
     @endphp
 
-    <p class="num">Number of My Attendances: {{ $count_my_attendances }}</p>
+    @php
+         $i = \Auth::user()->idno;
+        $total_my_attendances = DB::table('tbl_people_attendance')
+            ->where('idno', $i)->sum('totalhours');
+    @endphp
+
+    <p class="num">Number of Days: {{ $count_my_attendances }}</p>
+    <p class="hrs">Total Hours:  {{$total_my_attendances}}</p>
 
     <table id="users">
         <tr>
@@ -133,6 +140,14 @@
     }
 
     .num {
+        text-align: start;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .hrs {
         text-align: start;
         font-size: 15px;
         font-weight: 400;
