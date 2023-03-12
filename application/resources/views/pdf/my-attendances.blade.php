@@ -29,13 +29,14 @@
     @endphp
 
     @php
-         $i = \Auth::user()->idno;
+        $i = \Auth::user()->idno;
         $total_my_attendances = DB::table('tbl_people_attendance')
-            ->where('idno', $i)->sum('totalhours');
+            ->where('idno', $i)
+            ->sum('totalhours');
     @endphp
 
     <p class="num">Number of Days: {{ $count_my_attendances }}</p>
-    <p class="hrs">Total Hours:  {{$total_my_attendances}}</p>
+    <p class="hrs">Total Hours: {{ $total_my_attendances }}</p>
 
     <table id="users">
         <tr>
@@ -76,7 +77,8 @@
                         @endif
                     @endisset
                 </td>
-                <td style="text-align: center; background:color:#234495; color:white;">{{ $user->status_timein }}/{{ $user->status_timeout }}</td>
+                <td style="text-align: center; background:color:#234495; color:white;">
+                    {{ $user->status_timein }}/{{ $user->status_timeout }}</td>
             </tr>
         @endforeach
 
@@ -147,6 +149,7 @@
         margin-top: 5px;
         margin-bottom: 10px;
     }
+
     .hrs {
         text-align: start;
         font-size: 15px;
